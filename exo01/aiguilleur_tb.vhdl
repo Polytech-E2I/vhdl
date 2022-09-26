@@ -7,7 +7,7 @@ architecture tb of aiguilleur_tb is
     signal Aout, Bout : integer;
 begin
 
-    AIGUI: entity work.aiguilleur port map (Ain => Ain, Bin => Bin, C => C, Aout => Aout, Bout => Bout);
+    AIGUILLEUR: entity work.aiguilleur port map (Ain => Ain, Bin => Bin, C => C, Aout => Aout, Bout => Bout);
 
     Ain <= 5;
     Bin <= 3;
