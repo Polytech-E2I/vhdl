@@ -18,6 +18,6 @@ build: aiguilleur_tb
 
 sim: build
 	ghdl -r aiguilleur_tb --vcd=aiguilleur.vcd
-	# ghdl -r reseau_tb --vcd=reseau.vcd
-	# gtkwave aiguilleur.vcd
-	# gtkwave reseau.vcd
+#	ghdl -r reseau_tb --vcd=reseau.vcd
+#	gtkwave aiguilleur.vcd
+#	gtkwave reseau.vcd
