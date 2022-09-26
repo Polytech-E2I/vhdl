@@ -21,3 +21,6 @@ sim: build
 #	ghdl -r reseau_tb --vcd=reseau.vcd
 #	gtkwave aiguilleur.vcd
 #	gtkwave reseau.vcd
+
+clean:
+	rm *.o *.cf
