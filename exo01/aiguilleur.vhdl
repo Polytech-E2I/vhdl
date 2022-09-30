@@ -1,7 +1,10 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
 entity aiguilleur is
     port(
         Ain, Bin:   in integer;
-        C:          in bit;
+        C:          in std_logic;
         Aout, Bout: out integer
     );
 end aiguilleur;

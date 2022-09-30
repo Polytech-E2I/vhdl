@@ -1,9 +1,12 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
 entity aiguilleur_tb is
 end aiguilleur_tb;
 
 architecture tb of aiguilleur_tb is
     signal Ain, Bin : integer;
-    signal C : bit;
+    signal C : std_logic;
     signal Aout, Bout : integer;
 begin
 

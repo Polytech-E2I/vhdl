@@ -8,11 +8,11 @@ aiguilleur_tb: aiguilleur aiguilleur_tb.vhdl
 	ghdl -e aiguilleur_tb
 
 reseau:
-	ghdl -a reseau.vhdl
+	ghdl -a -fsynopsys reseau.vhdl
 
 reseau_tb: reseau reseau_tb.vhdl
-	ghdl -a reseau_tb.vhdl
-	ghdl -e reseau_tb
+	ghdl -a -fsynopsys reseau_tb.vhdl
+	ghdl -e -fsynopsys reseau_tb
 
 build: aiguilleur_tb reseau_tb
 

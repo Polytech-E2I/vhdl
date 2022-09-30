@@ -1,3 +1,5 @@
+library ieee;
+use ieee.std_logic_1164.all;
 
 entity reseau is
     port(
@@ -5,7 +7,7 @@ entity reseau is
         Bin:    in integer;
         Cin:    in integer;
         Din:    in integer;
-        Ctrl:   in bit_vector(4 downto 0);
+        Ctrl:   in std_logic_vector(4 downto 0);
         Aout:   out integer;
         Bout:   out integer;
         Cout:   out integer;
