@@ -23,4 +23,4 @@ sim: build
 	gtkwave reseau_tb.vcd
 
 clean:
-	rm *.o *.cf
+	rm *.o *.cf *.vcd *_tb
