@@ -28,9 +28,9 @@ begin
     Cin <= 3;
     Din <= 4;
 
-    Ctrl <= "00000";
-    wait for 1 fs;
-    Ctrl <= "00001";
+    -- Ctrl <= "00000";
+    -- wait for 1 fs;
+    -- Ctrl <= "00001";
     --Ctrl <= std_logic_vector(Ctrl + '1') after 1 fs;
     -- Ctrl <= std_logic_vector(unsigned(Ctrl) + 1) after 1 fs;
 
