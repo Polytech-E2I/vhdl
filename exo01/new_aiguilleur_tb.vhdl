@@ -16,9 +16,9 @@ architecture beh of new_aiguilleur_tb is
 
     begin
 
-    AIGTEST: AIG port map(SAin, SBin, SC, SAout, SBout);
+    AIGTEST: entity work.aiguilleur port map(SAin, SBin, SC, SAout, SBout);
 
-    SAin <= 5, 7 after 10 ns, 12 after 20 ns;
-    SBin <= 7, 9 after 10 ns, 3 after 20 ns;
-    SC <= '0' after 2 ns, '1' after 10 ns, '0' after 20 ns;
+    SAin <= 5, 7 after 1 fs, 12 after 2 fs;
+    SBin <= 7, 9 after 1 fs, 3 after 2 fs;
+    SC <= '0', '1' after 1 fs, '0' after 2 fs;
 end architecture;
