@@ -28,13 +28,14 @@ begin
     Cin <= 3;
     Din <= 4;
 
-    -- Ctrl <= "00000";
-    -- wait for 1 fs;
-    -- Ctrl <= "00001";
-    --Ctrl <= std_logic_vector(Ctrl + '1') after 1 fs;
-    -- Ctrl <= std_logic_vector(unsigned(Ctrl) + 1) after 1 fs;
-
-    -- CtrlLoop: for i in 0 to 31 generate
-    --     Ctrl <= Ctrl + '1' after 1 fs;
-    -- end generate;
+    Ctrl <= "00000",
+    "00001" after 10 ns,
+    "00010" after 20 ns,
+    "00100" after 30 ns,
+    "01000" after 40 ns,
+    "10000" after 50 ns,
+    "00011" after 60 ns,
+    "00110" after 70 ns,
+    "01100" after 80 ns,
+    "11000" after 90 ns;
 end rtb;
