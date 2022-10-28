@@ -3,8 +3,8 @@ use ieee.std_logic_1164.all;
 
 entity add1bit is
     port(
-        Ain, Bin, Cin: in std_logic;
-        Cout, S: out std_logic
+        Ain, Bin, Cin:  in std_logic;
+        Cout, S:        out std_logic
     );
 end add1bit;
 
