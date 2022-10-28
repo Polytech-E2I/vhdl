@@ -14,7 +14,9 @@ end;
 
 architecture impl of increment is
     component addnbit is
-        generic(N:natural := 4);
+        generic(
+            N:      natural
+        );
         port(
             Ain, Bin: in std_logic_vector(N-1 downto 0);
             S: out std_logic_vector(N-1 downto 0);
@@ -26,11 +28,15 @@ architecture impl of increment is
     signal tmp1:    std_logic_vector(N-1 downto 0);
 begin
 
-    ADDN: addnbit port map(
-        Ain => X,
-        Bin => tmp1,
-        S => Xplus1
-    );
+    ADDN: addnbit
+        generic map(
+            N => N
+        )
+        port map(
+            Ain => X,
+            Bin => tmp1,
+            S => Xplus1
+        );
 
     tmp1 <= tmp0 & '1';
 end architecture;
