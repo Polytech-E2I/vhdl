@@ -14,7 +14,7 @@ add1bit_tb: add1bit add1bit_tb.vhdl
 build: add1bit_tb
 
 sim: build
-	./add1bit_tb --vcd=add1bit_tb.vcd
+	./add1bit_tb --vcd=add1bit_tb.vcd --stop-time=10ps
 	gtkwave add1bit_tb.vcd
 
 clean:

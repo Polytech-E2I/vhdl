@@ -17,8 +17,8 @@ reseau_tb: reseau reseau_tb.vhdl
 build: aiguilleur_tb reseau_tb
 
 sim: build
-	./aiguilleur_tb --vcd=aiguilleur_tb.vcd
-	./reseau_tb --vcd=reseau_tb.vcd
+	./aiguilleur_tb --vcd=aiguilleur_tb.vcd --stop-time=10ps
+	./reseau_tb --vcd=reseau_tb.vcd --stop-time=10ps
 #	gtkwave aiguilleur_tb.vcd
 	gtkwave reseau_tb.vcd
 

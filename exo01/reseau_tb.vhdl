@@ -38,21 +38,21 @@ begin
     Cin <= 3;
     Din <= 4;
 
-    Ctrl <= "00000",
-    "00001" after 10 ns,
-    "00010" after 20 ns,
-    "00100" after 30 ns,
-    "01000" after 40 ns,
-    "10000" after 50 ns,
-    "00011" after 60 ns,
-    "00110" after 70 ns,
-    "01100" after 80 ns,
-    "11000" after 90 ns;
+    -- Ctrl <= "00000",
+    -- "00001" after 10 ns,
+    -- "00010" after 20 ns,
+    -- "00100" after 30 ns,
+    -- "01000" after 40 ns,
+    -- "10000" after 50 ns,
+    -- "00011" after 60 ns,
+    -- "00110" after 70 ns,
+    -- "01100" after 80 ns,
+    -- "11000" after 90 ns;
 
-    -- CASES: process
-    -- begin
-    --     for i in 0 to 31 loop
-    --         Ctrl <= std_logic_vector(to_unsigned(i, Ctrl'length));
-    --     end loop;
-    -- end process;
+    CASES: process
+    begin
+        for i in 0 to 31 loop
+            Ctrl <= std_logic_vector(to_unsigned(i, Ctrl'length));
+        end loop;
+    end process;
 end architecture rtb;
