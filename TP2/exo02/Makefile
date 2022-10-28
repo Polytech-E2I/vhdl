@@ -1,18 +1,20 @@
+program = mux2v1
+
 all: build
 
-mux2v1: mux2v1.vhdl
-	ghdl -a mux2v1.vhdl
+$(program): $(program).vhdl
+	ghdl -a $(program).vhdl
 
-mux2v1_tb: mux2v1 mux2v1_tb.vhdl
-	ghdl -a mux2v1_tb.vhdl
-	ghdl -e mux2v1_tb
+$(program)_tb: $(program) $(program)_tb.vhdl
+	ghdl -a $(program)_tb.vhdl
+	ghdl -e $(program)_tb
 
 
-build: mux2v1_tb
+build: $(program)_tb
 
 sim: build
-	./mux2v1_tb --vcd=mux2v1_tb.vcd --stop-time=10ps
-	gtkwave mux2v1_tb.vcd
+	./$(program)_tb --vcd=$(program)_tb.vcd --stop-time=10ps
+	gtkwave $(program)_tb.vcd
 
 clean:
 	rm -rf *.o *.cf *.vcd *_tb

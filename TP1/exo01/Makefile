@@ -1,26 +1,23 @@
+program = reseau
+
 all: build
 
-aiguilleur:
+aiguilleur: aiguilleur.vhdl
 	ghdl -a aiguilleur.vhdl
 
-aiguilleur_tb: aiguilleur aiguilleur_tb.vhdl
-	ghdl -a aiguilleur_tb.vhdl
-	ghdl -e aiguilleur_tb
+$(program): $(program).vhdl aiguilleur
+	ghdl -a $(program).vhdl
 
-reseau:
-	ghdl -a -fsynopsys reseau.vhdl
+$(program)_tb: $(program) $(program)_tb.vhdl
+	ghdl -a $(program)_tb.vhdl
+	ghdl -e $(program)_tb
 
-reseau_tb: reseau reseau_tb.vhdl
-	ghdl -a -fsynopsys reseau_tb.vhdl
-	ghdl -e -fsynopsys reseau_tb
 
-build: aiguilleur_tb reseau_tb
+build: $(program)_tb
 
 sim: build
-	./aiguilleur_tb --vcd=aiguilleur_tb.vcd --stop-time=10ps
-	./reseau_tb --vcd=reseau_tb.vcd --stop-time=10ps
-#	gtkwave aiguilleur_tb.vcd
-	gtkwave reseau_tb.vcd
+	./$(program)_tb --vcd=$(program)_tb.vcd --stop-time=10ps
+	gtkwave $(program)_tb.vcd
 
 clean:
 	rm -rf *.o *.cf *.vcd *_tb

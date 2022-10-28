@@ -1,21 +1,20 @@
+program = sous1bit
+
 all: build
 
-sous1bit:
-	ghdl -a sous1bit.vhdl
+$(program): $(program).vhdl
+	ghdl -a $(program).vhdl
 
-addnbit:
-	ghdl -a addnbit.vhdl
-
-sous1bit_tb: sous1bit sous1bit_tb.vhdl
-	ghdl -a sous1bit_tb.vhdl
-	ghdl -e sous1bit_tb
+$(program)_tb: $(program) $(program)_tb.vhdl
+	ghdl -a $(program)_tb.vhdl
+	ghdl -e $(program)_tb
 
 
-build: sous1bit_tb
+build: $(program)_tb
 
 sim: build
-	./sous1bit_tb --vcd=sous1bit_tb.vcd --stop-time=10ps
-	gtkwave sous1bit_tb.vcd
+	./$(program)_tb --vcd=$(program)_tb.vcd --stop-time=10ps
+	gtkwave $(program)_tb.vcd
 
 clean:
 	rm -rf *.o *.cf *.vcd *_tb

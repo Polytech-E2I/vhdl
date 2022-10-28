@@ -1,26 +1,23 @@
+program = addnbit
+
 all: build
 
 add1bit:
 	ghdl -a add1bit.vhdl
 
-addnbit:
-	ghdl -a addnbit.vhdl
+$(program): $(program).vhdl add1bit
+	ghdl -a $(program).vhdl
 
-add1bit_tb: add1bit add1bit_tb.vhdl
-	ghdl -a add1bit_tb.vhdl
-	ghdl -e add1bit_tb
+$(program)_tb: $(program) $(program)_tb.vhdl
+	ghdl -a $(program)_tb.vhdl
+	ghdl -e $(program)_tb
 
-addnbit_tb: addnbit addnbit_tb.vhdl
-	ghdl -a addnbit_tb.vhdl
-	ghdl -e addnbit_tb
 
-build: add1bit_tb addnbit_tb
+build: $(program)_tb
 
 sim: build
-	./add1bit_tb --vcd=add1bit_tb.vcd --stop-time=10ps
-	./addnbit_tb --vcd=addnbit_tb.vcd --stop-time=10ps
-#	gtkwave add1bit_tb.vcd
-	gtkwave addnbit_tb.vcd
+	./$(program)_tb --vcd=$(program)_tb.vcd --stop-time=10ps
+	gtkwave $(program)_tb.vcd
 
 clean:
 	rm -rf *.o *.cf *.vcd *_tb

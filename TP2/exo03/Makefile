@@ -1,18 +1,20 @@
+program = registre
+
 all: build
 
-registre: registre.vhdl
-	ghdl -a registre.vhdl
+$(program): $(program).vhdl
+	ghdl -a $(program).vhdl
 
-registre_tb: registre registre_tb.vhdl
-	ghdl -a registre_tb.vhdl
-	ghdl -e registre_tb
+$(program)_tb: $(program) $(program)_tb.vhdl
+	ghdl -a $(program)_tb.vhdl
+	ghdl -e $(program)_tb
 
 
-build: registre_tb
+build: $(program)_tb
 
 sim: build
-	./registre_tb --vcd=registre_tb.vcd --stop-time=10ps
-	gtkwave registre_tb.vcd
+	./$(program)_tb --vcd=$(program)_tb.vcd --stop-time=10ps
+	gtkwave $(program)_tb.vcd
 
 clean:
 	rm -rf *.o *.cf *.vcd *_tb
