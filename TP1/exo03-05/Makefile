@@ -1,8 +1,11 @@
-program = sous1bit
+program = sousnbit
 
 all: build
 
-$(program): $(program).vhdl
+sous1bit: sous1bit.vhdl
+	ghdl -a sous1bit.vhdl
+
+$(program): $(program).vhdl sous1bit
 	ghdl -a $(program).vhdl
 
 $(program)_tb: $(program) $(program)_tb.vhdl
