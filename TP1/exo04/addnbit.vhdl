@@ -11,7 +11,7 @@ entity addnbit is
 end;
 
 architecture addnimpl of addnbit is
-    signal Carry_int: std_logic_vector(N downto 0)
+    signal Carry_int: std_logic_vector(N downto 0);
     component add1bit is
         port
         (
@@ -22,6 +22,6 @@ architecture addnimpl of addnbit is
 begin
     Carry_int(0) <= '0';
     ADDN_inst: for I in 0 to N generate
-
-        ADD: port map
+        ADD: add1bit port map(Ain(I), Bin(I), Carry_int(I), S(I), C);
+    end generate;
 end;
