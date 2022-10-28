@@ -18,4 +18,4 @@ sim: build
 	gtkwave add1bit_tb.vcd
 
 clean:
-	rm *.o *.cf
+	rm -rf *.o *.cf *.vcd *_tb
