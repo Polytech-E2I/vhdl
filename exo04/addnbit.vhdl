@@ -12,13 +12,13 @@ end;
 
 architecture addnimpl of addnbit is
     signal Carry_int: std_logic_vector(N downto 0)
-    component ADD
-    (
-        A,B,Cin: in std_logic;
-        Cout, S : out std_logic;
-
-    );
-    end component ADD;
+    component add1bit is
+        port
+        (
+            A, B, Cin:  in std_logic;
+            Cout, S:    out std_logic
+        );
+    end component;
 begin
     Carry_int(0) <= '0';
     ADDN_inst: for I in 0 to N generate
