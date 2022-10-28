@@ -14,13 +14,15 @@ architecture tb of add1bit_tb is
     end component;
 
     --- UUT input signals
-    signal Ain: std_logic := '1';
+    signal Ain: std_logic := '0';
     signal Bin: std_logic := '0';
-    signal Cin: std_logic := '1';
+    signal Cin: std_logic := '0';
     --- UUT output signals
     signal Cout, S:         std_logic := 'U';
 
-    constant clock_period:  time := 1 fs;
+    constant clock_period1: time := 1 fs;
+    constant clock_period2: time := 2 fs;
+    constant clock_period3: time := 4 fs;
 
 begin
     ADD_A: ADD1BIT port map(
@@ -31,7 +33,7 @@ begin
         S       => S
     );
 
-    Ain <= not Ain after clock_period;
-    Bin <= not Bin after clock_period;
-    Cin <= not Cin after clock_period;
+    Ain <= not Ain after clock_period1;
+    Bin <= not Bin after clock_period2;
+    Cin <= not Cin after clock_period3;
 end tb;
