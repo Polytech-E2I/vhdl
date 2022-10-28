@@ -53,6 +53,7 @@ begin
     begin
         for i in 0 to 31 loop
             Ctrl <= std_logic_vector(to_unsigned(i, Ctrl'length));
+            wait for 1 fs;
         end loop;
     end process;
 end architecture rtb;
