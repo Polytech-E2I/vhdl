@@ -1,17 +1,27 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 entity reseau_tb is
 end reseau_tb;
 
 architecture rtb of reseau_tb is
-    signal Ain, Bin, Cin, Din: integer;
-    signal Ctrl: std_logic_vector(4 downto 0);
-    signal Aout, Bout, Cout, Dout: integer;
+    -- UUT component
+    component reseau is
+        port(
+            Ain, Bin, Cin, Din:     in integer;
+            Ctrl:                   in std_logic_vector(4 downto 0);
+            Aout, Bout, Cout, Dout: out integer
+        );
+    end component;
+
+    -- UUT input signals
+    signal Ain, Bin, Cin, Din:      integer;-- := 0;
+    signal Ctrl:                    std_logic_vector(4 downto 0);-- := "00000";
+    -- UUT output signals
+    signal Aout, Bout, Cout, Dout:  integer;-- := 0;
 begin
-    RES: entity work.reseau port map(
+    UUT: reseau port map(
         Ain => Ain
         , Bin => Bin
         , Cin => Cin
@@ -38,4 +48,11 @@ begin
     "00110" after 70 ns,
     "01100" after 80 ns,
     "11000" after 90 ns;
-end rtb;
+
+    -- CASES: process
+    -- begin
+    --     for i in 0 to 31 loop
+    --         Ctrl <= std_logic_vector(to_unsigned(i, Ctrl'length));
+    --     end loop;
+    -- end process;
+end architecture rtb;
