@@ -45,8 +45,8 @@ begin
             Q => Q
         );
 
-    D <= std_logic_vector(to_unsigned(13, D'length));
+    D <= std_logic_vector(to_unsigned(13, D'length)), std_logic_vector(to_unsigned(4, D'length)) after 10 fs;
     clk <= not clk after clock_period;
     load <= not load after clock_period * 2;
-    nrst <= '1', '0' after 7 fs;
+    nrst <= '1', '0' after 27 fs;
 end;
