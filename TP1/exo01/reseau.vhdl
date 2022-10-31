@@ -13,9 +13,9 @@ entity reseau is
         Cout:   out integer;
         Dout:   out integer
     );
-end reseau;
+end;
 
-architecture impl02 of reseau is
+architecture impl of reseau is
     -- Base component
     component aiguilleur is
         port(
@@ -34,4 +34,4 @@ begin
     AIG3: aiguilleur port map (Ain => S2, Bin => S3, C => Ctrl(2), Aout => S5, Bout => S6);
     AIG4: aiguilleur port map (Ain => S1, Bin => S5, C => Ctrl(1), Aout => Aout, Bout => Bout);
     AIG5: aiguilleur port map (Ain => S6, Bin => S4, C => Ctrl(0), Aout => Cout, Bout => Dout);
-end architecture impl02;
+end;

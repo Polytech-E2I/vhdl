@@ -8,7 +8,7 @@ entity sous1bit is
     );
 end;
 
-architecture sousimpl of sous1bit is
+architecture impl of sous1bit is
 begin
     S <= Ain xor Bin xor Cin;
     Cout <= ((not Ain) and Bin) or ((not Ain) and Cin) or (Bin and Cin);

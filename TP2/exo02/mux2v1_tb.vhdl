@@ -32,7 +32,7 @@ architecture tb of mux2v1_tb is
     constant clock_period: time := 1 fs;
 
 begin
-    MUX: mux2v1
+    UUT: mux2v1
         generic map(
             N => N
         )

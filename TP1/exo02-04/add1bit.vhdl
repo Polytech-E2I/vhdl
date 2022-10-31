@@ -6,9 +6,9 @@ entity add1bit is
         Ain, Bin, Cin:  in std_logic;
         Cout, S:        out std_logic
     );
-end add1bit;
+end;
 
-architecture addimpl of add1bit is
+architecture impl of add1bit is
 begin
     S <= Ain xor Bin xor Cin;
     Cout <= (Ain and Bin) or (Ain and Cin) or (Bin and Cin);

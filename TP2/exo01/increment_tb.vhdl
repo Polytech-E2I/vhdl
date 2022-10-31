@@ -25,7 +25,7 @@ architecture tb of increment_tb is
     signal Xplus1:  std_logic_vector(nombre_bits-1 downto 0) := (others => 'U');
 
 begin
-    INCR: increment
+    UUT: increment
         generic map(
             N => nombre_bits
         )
@@ -41,4 +41,4 @@ begin
             wait for 1 fs;
         end loop;
     end process;
-end tb;
+end;

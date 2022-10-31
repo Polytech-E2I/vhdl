@@ -17,4 +17,4 @@ end;
 architecture impl of mux2v1 is
 begin
     Y <= D0 when S = '0' else D1;
-end architecture;
+end;

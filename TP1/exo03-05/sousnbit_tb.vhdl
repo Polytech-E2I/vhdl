@@ -28,7 +28,7 @@ architecture tb of sousnbit_tb is
     signal C:       std_logic;
 
 begin
-    ADDN: sousnbit
+    UUT: sousnbit
     generic map(
         N => N
     )
@@ -47,4 +47,4 @@ begin
         std_logic_vector(to_unsigned(9, Bin'length)),
         std_logic_vector(to_unsigned(7, Bin'length)) after 1 fs,
         std_logic_vector(to_unsigned(0, Bin'length)) after 2 fs;
-end tb;
+end;

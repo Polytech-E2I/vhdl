@@ -39,4 +39,4 @@ begin
         );
 
     tmp1 <= tmp0 & '1';
-end architecture;
+end;

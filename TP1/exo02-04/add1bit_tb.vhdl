@@ -25,7 +25,7 @@ architecture tb of add1bit_tb is
     constant clock_period3: time := 4 fs;
 
 begin
-    ADD_A: ADD1BIT port map(
+    UUT: ADD1BIT port map(
         Ain     => Ain,
         Bin     => Bin,
         Cin     => Cin,
@@ -36,4 +36,4 @@ begin
     Ain <= not Ain after clock_period1;
     Bin <= not Bin after clock_period2;
     Cin <= not Cin after clock_period3;
-end tb;
+end;

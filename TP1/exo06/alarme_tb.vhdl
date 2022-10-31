@@ -18,6 +18,7 @@ architecture tb of alarme_tb is
     signal S:       std_logic := 'U';
 
     constant clock_period: time := 1 fs;
+
 begin
     UUT: alarme port map(
         V => V,

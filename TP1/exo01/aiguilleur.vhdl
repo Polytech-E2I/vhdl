@@ -7,11 +7,10 @@ entity aiguilleur is
         C:          in std_logic;
         Aout, Bout: out integer
     );
-end aiguilleur;
+end;
 
-
-architecture impl01 of aiguilleur is
+architecture impl of aiguilleur is
 begin
     Aout <= Ain when C = '0' else Bin;
     Bout <= Bin when C = '0' else Ain;
-end architecture impl01;
+end;

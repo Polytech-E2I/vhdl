@@ -18,7 +18,6 @@ architecture tb of addnbit_tb is
         );
     end component;
 
-
     constant N:     natural := 4;
     --- UUT input signals
     signal Ain:     std_logic_vector(N-1 downto 0) := (others => 'U');
@@ -28,7 +27,7 @@ architecture tb of addnbit_tb is
     signal C:       std_logic;
 
 begin
-    ADDN: addnbit
+    UUT: addnbit
     generic map(
         N => N
     )
@@ -47,4 +46,4 @@ begin
         std_logic_vector(to_unsigned(9, Bin'length)),
         std_logic_vector(to_unsigned(7, Bin'length)) after 1 fs,
         std_logic_vector(to_unsigned(0, Bin'length)) after 2 fs;
-end tb;
+end;

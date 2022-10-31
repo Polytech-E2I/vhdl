@@ -12,8 +12,9 @@ entity addnbit is
     );
 end;
 
-architecture addnimpl of addnbit is
+architecture impl of addnbit is
     signal Carry_int: std_logic_vector(N downto 0) := (others => '0');
+
     component add1bit is
         port
         (
@@ -21,6 +22,7 @@ architecture addnimpl of addnbit is
             Cout, S:        out std_logic
         );
     end component;
+
 begin
     Carry_int(0) <= '0';
     ADDN_inst: for I in 0 to N-1 generate

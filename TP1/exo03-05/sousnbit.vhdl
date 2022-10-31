@@ -12,7 +12,7 @@ entity sousnbit is
     );
 end;
 
-architecture sousnimpl of sousnbit is
+architecture impl of sousnbit is
     signal Carry_int: std_logic_vector(N downto 0) := (others => '0');
     component sous1bit is
         port
@@ -25,11 +25,6 @@ begin
     Carry_int(0) <= '0';
     SOUSN_inst: for I in 0 to N-1 generate
         ADD: sous1bit port map(
-            -- Ain => Ain(I),
-            -- Bin => Bin(I),
-            -- Cin => Carry_int(I),
-            -- Cout => Carry_int(I+1),
-            -- S => S(I)
             Ain(I),
             Bin(I),
             Carry_int(I),
