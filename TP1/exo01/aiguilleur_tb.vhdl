@@ -16,9 +16,11 @@ architecture tb of aiguilleur_tb is
 
     -- UUT input signals
     signal Ain, Bin:    integer := 0;
-    signal C:           std_logic := 'U';
+    signal C:           std_logic := '0';
     -- UUT output signals
-    signal Aout, Bout:  integer := 0;
+    signal Aout, Bout:  integer;
+
+    constant clock_period: time := 1 fs;
 
 begin
     UUT: aiguilleur port map(
@@ -29,7 +31,7 @@ begin
         Bout => Bout
     );
 
-    Ain <= 5, 7 after 1 fs, 12 after 2 fs;
-    Bin <= 7, 9 after 1 fs, 3 after 2 fs;
-    C <= '0', '1' after 1 fs, '0' after 2 fs;
+    Ain <= 5;
+    Bin <= 7;
+    C <= not C after clock_period;
 end;
