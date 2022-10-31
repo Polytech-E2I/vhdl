@@ -30,8 +30,8 @@ architecture tb of registre_tb is
     -- UUT output signals
     signal Q: std_logic_vector(N-1 downto 0) := (others => 'U');
 
-    constant clock_period1: time := 1 fs;
-    constant clock_period2: time := 2 fs;
+    constant clock_period: time := 1 fs;
+
 begin
     UUT: registre
         generic map(
@@ -46,7 +46,7 @@ begin
         );
 
     D <= std_logic_vector(to_unsigned(13, D'length));
-    clk <= not clk after clock_period1;
-    load <= not load after clock_period2;
+    clk <= not clk after clock_period;
+    load <= not load after clock_period * 2;
     nrst <= '1', '0' after 7 fs;
 end;

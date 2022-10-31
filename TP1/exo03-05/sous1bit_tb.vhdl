@@ -20,9 +20,7 @@ architecture tb of sous1bit_tb is
     --- UUT output signals
     signal Cout, S:         std_logic := 'U';
 
-    constant clock_period1: time := 1 fs;
-    constant clock_period2: time := 2 fs;
-    constant clock_period3: time := 4 fs;
+    constant clock_period: time := 1 fs;
 
 begin
     UUT: sous1bit port map(
@@ -33,7 +31,7 @@ begin
         S       => S
     );
 
-    Ain <= not Ain after clock_period1;
-    Bin <= not Bin after clock_period2;
-    Cin <= not Cin after clock_period3;
+    Ain <= not Ain after clock_period;
+    Bin <= not Bin after clock_period * 2;
+    Cin <= not Cin after clock_period * 4;
 end;
