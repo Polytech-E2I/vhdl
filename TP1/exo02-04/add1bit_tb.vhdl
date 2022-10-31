@@ -6,7 +6,7 @@ end;
 
 architecture tb of add1bit_tb is
     --- UUT component
-    component ADD1BIT
+    component add1bit
         port(
             Ain, Bin, Cin:  in std_logic;
             Cout, S:        out std_logic
@@ -23,7 +23,7 @@ architecture tb of add1bit_tb is
     constant clock_period: time := 1 fs;
 
 begin
-    UUT: ADD1BIT port map(
+    UUT: add1bit port map(
         Ain     => Ain,
         Bin     => Bin,
         Cin     => Cin,
