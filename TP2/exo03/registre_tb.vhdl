@@ -6,7 +6,7 @@ entity registre_tb is
 end;
 
 architecture tb of registre_tb is
-    constant N: natural := 4;
+    constant N: natural := 16;
 
     -- UUT component
     component registre is
