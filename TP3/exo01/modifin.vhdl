@@ -41,9 +41,9 @@ architecture impl of modifin is
     end component;
 
     signal CONSTZERO:   std_logic_vector(N-1 downto 0) := (others => '0');
+
     signal MUX0OUT:     std_logic_vector(N-1 downto 0);
     signal INVOUT:      std_logic_vector(N-1 downto 0);
-    signal MUXINVOUT:   std_logic_vector(N-1 downto 0);
 
 begin
     MUX0: mux2v1
@@ -74,8 +74,6 @@ begin
             MUX0OUT,
             INVOUT,
             neg,
-            MUXINVOUT
+            Xout
         );
-
-    Xout <= MUXINVOUT;
 end;
