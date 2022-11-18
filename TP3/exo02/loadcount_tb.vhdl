@@ -53,3 +53,5 @@ begin
     nrst <= '1', '0' after 32 fs, '1' after 42 fs;
     st <= '1', '0' after 20 fs, '1' after 42 fs;
 end;
+
+-- https://vhdlwhiz.com/configuration-constructs-explained/

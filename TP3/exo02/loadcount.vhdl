@@ -97,3 +97,21 @@ begin
 
     S <= REGOUT;
 end;
+
+architecture alt of loadcount is
+    signal tmp0:    std_logic_vector(N-1 downto 1) := (others => '0');
+    signal tmp1:    std_logic_vector(N-1 downto 0);
+begin
+    tmp1 <= tmp0 & '1';
+
+    process(st, nrst, clk)
+    begin
+        if st = '1' then
+            S <= X;
+        else
+            if (clk'event and clk = '1') then
+                S <= S + tmp1;
+            end if;
+        end if;
+    end process;
+end;
