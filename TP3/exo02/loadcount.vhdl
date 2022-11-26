@@ -94,7 +94,7 @@ begin
             REGOUT
         );
 
-    REGEN <= st; --st nand '0'; -- <=> not st
+    REGEN <= '1'; --st nand '0';
 
     S <= REGOUT;
 end;
