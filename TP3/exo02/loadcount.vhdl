@@ -16,7 +16,7 @@ entity loadcount is
     );
 end;
 
-architecture impl of loadcount is
+architecture impl01 of loadcount is
     component increment is
         generic(
             N:  natural
@@ -98,11 +98,29 @@ begin
     S <= REGOUT;
 end;
 
-architecture alt of loadcount is
-    signal tmp0:    std_logic_vector(N-1 downto 1) := (others => '0');
-    signal tmp1:    std_logic_vector(N-1 downto 0);
+architecture impl02 of loadcount is
+    component increment is
+        generic(
+            N:  natural
+        );
+
+        port(
+            X:      in std_logic_vector(N-1 downto 0);
+            Xplus1: out std_logic_vector(N-1 downto 0)
+        );
+    end component;
+
+    signal Xplus1: std_logic_vector(N-1 downto 0) := (others => 'U');
+
 begin
-    tmp1 <= tmp0 & '1';
+    INCR: increment
+        generic map(
+            N => N
+        )
+        port map(
+            X,
+            Xplus1
+        );
 
     process(st, nrst, clk)
     begin
@@ -110,7 +128,7 @@ begin
             S <= X;
         else
             if (clk'event and clk = '1') then
-                S <= S + tmp1;
+                S <= Xplus1;
             end if;
         end if;
     end process;
