@@ -142,9 +142,3 @@ begin
         end if;
     end process;
 end;
-
-architecture impl03 of loadcount is
-begin
-
-    S <= std_logic_vector(to_unsigned(42, S'length));
-end;
