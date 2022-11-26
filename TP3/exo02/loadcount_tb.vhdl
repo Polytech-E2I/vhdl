@@ -15,7 +15,7 @@ architecture tb of loadcount_tb is
         );
 
         port(
-            X:      in std_logic_vector(N-1 downto 0);
+            E:      in std_logic_vector(N-1 downto 0);
             st:     in std_logic;
             clk:    in std_logic;
             nrst:   in std_logic;
@@ -25,7 +25,7 @@ architecture tb of loadcount_tb is
     end component;
 
     -- UUT input signals
-    signal X:       std_logic_vector(N-1 downto 0) := (others => 'U');
+    signal E:       std_logic_vector(N-1 downto 0) := (others => 'U');
     signal st:      std_logic := '1';
     signal clk:     std_logic := '0';
     signal nrst:    std_logic := '0';
@@ -42,7 +42,7 @@ begin
             N => N
         )
         port map(
-            X => X,
+            E => E,
             st => st,
             clk => clk,
             nrst => nrst,
@@ -54,14 +54,14 @@ begin
             N => N
         )
         port map(
-            X => X,
+            E => E,
             st => st,
             clk => clk,
             nrst => nrst,
             S => S2
         );
 
-    X <= std_logic_vector(to_unsigned(5, X'length));
+    E <= std_logic_vector(to_unsigned(5, E'length));
 
     clk <= not clk      after clock_period;
     nrst <= '1', '0' after 32 fs, '1' after 42 fs;

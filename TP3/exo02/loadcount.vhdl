@@ -8,7 +8,7 @@ entity loadcount is
     );
 
     port(
-        X:      in std_logic_vector(N-1 downto 0);
+        E:      in std_logic_vector(N-1 downto 0);
         st:     in std_logic;
         clk:    in std_logic;
         nrst:   in std_logic;
@@ -111,7 +111,7 @@ architecture impl02 of loadcount is
         );
     end component;
 
-    signal Xincr : std_logic_vector(N-1 downto 0) := (others => '0');
+    signal X:      std_logic_vector(N-1 downto 0) := (others => '0');
     signal Xplus1: std_logic_vector(N-1 downto 0) := (others => 'U');
 
 begin
@@ -120,7 +120,7 @@ begin
             N => N
         )
         port map(
-            Xincr,
+            X,
             Xplus1
         );
 
@@ -130,12 +130,12 @@ begin
             S <= std_logic_vector(to_unsigned(0, S'length));
         else
             if st = '1' then
-                S <= X;
-                Xincr <= X;
+                S <= E;
+                X <= E;
             else
                 if (clk'event and clk = '1') then
                     S       <= Xplus1;
-                    Xincr   <= Xplus1;
+                    X       <= Xplus1;
                 end if;
             end if;
         end if;
