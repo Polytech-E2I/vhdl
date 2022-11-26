@@ -128,6 +128,7 @@ begin
     begin
         if nrst = '0' then
             S <= std_logic_vector(to_unsigned(0, S'length));
+            X <= std_logic_vector(to_unsigned(0, X'length));
         else
             if st = '1' then
                 S <= E;
