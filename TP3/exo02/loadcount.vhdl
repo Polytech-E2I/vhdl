@@ -67,8 +67,8 @@ begin
             N =>N
         )
         port map(
-            X,
             INCROUT,
+            E,
             st,
             MUXOUT
         );
