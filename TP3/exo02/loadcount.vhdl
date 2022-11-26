@@ -124,17 +124,17 @@ begin
             Xplus1
         );
 
-    process(st, nrst, clk)
+    process(nrst, clk)
     begin
         if nrst = '0' then
             S <= std_logic_vector(to_unsigned(0, S'length));
             X <= std_logic_vector(to_unsigned(0, X'length));
         else
-            if st = '1' then
-                S <= E;
-                X <= E;
-            else
-                if (clk'event and clk = '1') then
+            if (clk'event and clk = '1') then
+                if (not st'event and st = '1') then
+                    S <= E;
+                    X <= E;
+                else
                     S       <= Xplus1;
                     X       <= Xplus1;
                 end if;
