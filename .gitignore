@@ -2,3 +2,4 @@
 *.cf
 *.vcd
 *_tb
+*_cfg*

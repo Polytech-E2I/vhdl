@@ -1,0 +1,6 @@
+# Difficultés
+
+* Sans intanciation directe, la dernière architecture est choisie dans tous les cas...
+* L'architecture avec le MUX2V1, l'incrémenteur et le registre ne donne pas le résultat décrit dans l'énoncé...
+* Que doit-il se passer quand nrst = 0 ? J'ai supposé la sortie à zéro.
+* Que doit-il se passer après un reset si st ne repasse pas à 1 ? Faut-il compter à partir de zéro, ou de l'état de la sortie précédant le reset ?

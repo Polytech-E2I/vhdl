@@ -1,0 +1,28 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Sat Nov 26 17:12:21 2022
+[*]
+[dumpfile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP3/exo02/loadcount_tb.vcd"
+[dumpfile_mtime] "Sat Nov 26 17:11:27 2022"
+[dumpfile_size] 1204775
+[savefile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP3/exo02/loadcount_tb.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-4.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 208
+[signals_width] 86
+[sst_expanded] 1
+[sst_vpaned_height] 149
+@22
+loadcount_tb.x[7:0]
+@28
+loadcount_tb.clk
+loadcount_tb.nrst
+loadcount_tb.st
+@22
+loadcount_tb.s1[7:0]
+@23
+loadcount_tb.s2[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity loadcount is
     generic(
@@ -93,7 +94,7 @@ begin
             REGOUT
         );
 
-    REGEN <= st nand '0'; -- <=> not st
+    REGEN <= st; --st nand '0'; -- <=> not st
 
     S <= REGOUT;
 end;
@@ -110,6 +111,7 @@ architecture impl02 of loadcount is
         );
     end component;
 
+    signal Xincr : std_logic_vector(N-1 downto 0) := (others => '0');
     signal Xplus1: std_logic_vector(N-1 downto 0) := (others => 'U');
 
 begin
@@ -118,18 +120,30 @@ begin
             N => N
         )
         port map(
-            X,
+            Xincr,
             Xplus1
         );
 
     process(st, nrst, clk)
     begin
-        if st = '1' then
-            S <= X;
+        if nrst = '0' then
+            S <= std_logic_vector(to_unsigned(0, S'length));
         else
-            if (clk'event and clk = '1') then
-                S <= Xplus1;
+            if st = '1' then
+                S <= X;
+                Xincr <= X;
+            else
+                if (clk'event and clk = '1') then
+                    S       <= Xplus1;
+                    Xincr   <= Xplus1;
+                end if;
             end if;
         end if;
     end process;
+end;
+
+architecture impl03 of loadcount is
+begin
+
+    S <= std_logic_vector(to_unsigned(42, S'length));
 end;
