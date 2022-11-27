@@ -1,0 +1,34 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Sun Nov 27 13:58:10 2022
+[*]
+[dumpfile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP3/exo03/alu_tb.vcd"
+[dumpfile_mtime] "Sun Nov 27 13:57:02 2022"
+[dumpfile_size] 3675345
+[savefile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP3/exo03/alu_tb.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-1.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] alu_tb.
+[treeopen] alu_tb.uut.
+[sst_width] 208
+[signals_width] 142
+[sst_expanded] 1
+[sst_vpaned_height] 149
+@29
+alu_tb.x[7:0]
+alu_tb.y[7:0]
+alu_tb.zx
+alu_tb.nx
+alu_tb.uut.modifxout[7:0]
+alu_tb.zy
+alu_tb.ny
+alu_tb.uut.modifyout[7:0]
+alu_tb.uut.addout[7:0]
+alu_tb.uut.andout[7:0]
+alu_tb.f
+alu_tb.no
+alu_tb.s[7:0]
+[pattern_trace] 1
+[pattern_trace] 0
