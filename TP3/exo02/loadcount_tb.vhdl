@@ -36,7 +36,6 @@ architecture tb of loadcount_tb is
     constant clock_period: time := 1 fs;
 
 begin
-    -- UUT1: entity work.loadcount(impl01)
     UUT1: loadcount
         generic map(
             N => N
@@ -48,7 +47,6 @@ begin
             nrst => nrst,
             S => S1
         );
-    -- UUT2: entity work.loadcount(impl02)
     UUT2: loadcount
         generic map(
             N => N
