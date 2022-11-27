@@ -20,7 +20,7 @@ architecture tb of modifin_tb is
             zero:   in std_logic;
             neg:    in std_logic;
 
-            Xout:   out std_logic_vector(N-1 downto 0)
+            S:   out std_logic_vector(N-1 downto 0)
         );
     end component;
 
@@ -30,7 +30,7 @@ architecture tb of modifin_tb is
     signal zero:        std_logic := '0';
     signal neg:         std_logic := '0';
     -- UUT output signals
-    signal Xout:    std_logic_vector(N-1 downto 0) := (others => 'U');
+    signal S:           std_logic_vector(N-1 downto 0) := (others => 'U');
 
     constant clock_period: time := 1 fs;
 
@@ -44,7 +44,7 @@ begin
             Y => CONSTZERO,
             zero => zero,
             neg => neg,
-            Xout => Xout
+            S => S
         );
 
     X <= std_logic_vector(to_unsigned(13, X'length));

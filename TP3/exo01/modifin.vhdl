@@ -12,7 +12,7 @@ entity modifin is
         zero:   in std_logic;
         neg:    in std_logic;
 
-        Xout:   out std_logic_vector(N-1 downto 0)
+        S:   out std_logic_vector(N-1 downto 0)
     );
 end;
 
@@ -73,6 +73,6 @@ begin
             MUX0OUT,
             INVOUT,
             neg,
-            Xout
+            S
         );
 end;
