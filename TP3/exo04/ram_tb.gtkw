@@ -1,0 +1,25 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Sun Nov 27 16:17:03 2022
+[*]
+[dumpfile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP3/exo04/ram_tb.vcd"
+[dumpfile_mtime] "Sun Nov 27 16:16:22 2022"
+[dumpfile_size] 468278
+[savefile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP3/exo04/ram_tb.gtkw"
+[timestart] 0
+[size] 1440 829
+[pos] -221 -115
+*-2.858131 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 208
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 230
+@22
+ram_tb.address[3:0]
+@28
+ram_tb.wr_ena
+@25
+ram_tb.datain[7:0]
+ram_tb.dataout[7:0]
+[pattern_trace] 1
+[pattern_trace] 0
