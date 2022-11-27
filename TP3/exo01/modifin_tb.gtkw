@@ -1,0 +1,23 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Sun Nov 27 16:37:15 2022
+[*]
+[dumpfile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP3/exo01/modifin_tb.vcd"
+[dumpfile_mtime] "Sun Nov 27 16:36:56 2022"
+[dumpfile_size] 995216
+[savefile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP3/exo01/modifin_tb.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-1.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 208
+[signals_width] 78
+[sst_expanded] 1
+[sst_vpaned_height] 149
+@28
+modifin_tb.x[3:0]
+modifin_tb.zero
+modifin_tb.neg
+modifin_tb.s[3:0]
+[pattern_trace] 1
+[pattern_trace] 0

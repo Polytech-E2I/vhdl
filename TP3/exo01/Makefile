@@ -19,7 +19,7 @@ build: $(program)_tb
 
 sim: build
 	./$(program)_tb --vcd=$(program)_tb.vcd --stop-time=10ps
-	gtkwave $(program)_tb.vcd
+	gtkwave $(program)_tb.vcd $(program)_tb.gtkw
 
 clean:
 	rm -rf *.o *.cf *.vcd *_tb
