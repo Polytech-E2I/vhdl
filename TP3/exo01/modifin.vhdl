@@ -8,6 +8,7 @@ entity modifin is
 
     port(
         X:      in std_logic_vector(N-1 downto 0);
+        Y:      in std_logic_vector(N-1 downto 0);
         zero:   in std_logic;
         neg:    in std_logic;
 
@@ -40,8 +41,6 @@ architecture impl of modifin is
         );
     end component;
 
-    signal CONSTZERO:   std_logic_vector(N-1 downto 0) := (others => '0');
-
     signal MUX0OUT:     std_logic_vector(N-1 downto 0);
     signal INVOUT:      std_logic_vector(N-1 downto 0);
 
@@ -52,7 +51,7 @@ begin
         )
         port map(
             X,
-            CONSTZERO,
+            Y,
             zero,
             MUX0OUT
         );

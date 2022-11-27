@@ -16,6 +16,7 @@ architecture tb of modifin_tb is
 
         port(
             X:      in std_logic_vector(N-1 downto 0);
+            Y:      in std_logic_vector(N-1 downto 0);
             zero:   in std_logic;
             neg:    in std_logic;
 
@@ -24,9 +25,10 @@ architecture tb of modifin_tb is
     end component;
 
     -- UUT input signals
-    signal X:       std_logic_vector(N-1 downto 0) := (others => 'U');
-    signal zero:    std_logic := '0';
-    signal neg:     std_logic := '0';
+    signal X:           std_logic_vector(N-1 downto 0) := (others => 'U');
+    signal CONSTZERO:   std_logic_vector(N-1 downto 0) := (others => '0');
+    signal zero:        std_logic := '0';
+    signal neg:         std_logic := '0';
     -- UUT output signals
     signal Xout:    std_logic_vector(N-1 downto 0) := (others => 'U');
 
@@ -39,6 +41,7 @@ begin
         )
         port map(
             X => X,
+            Y => CONSTZERO,
             zero => zero,
             neg => neg,
             Xout => Xout
