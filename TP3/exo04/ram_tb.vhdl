@@ -8,7 +8,7 @@ end;
 architecture tb of ram_tb is
     constant load_file_name : string := "testfile.txt";
     constant dta : integer := 8;
-    constant adr : integer := 4;
+    constant adr : integer := 6;
 
     component MA_RAM is
         generic(
@@ -54,7 +54,7 @@ begin
 
         datain <= (others => 'U');
         wr_ena <= '0';
-        for i in 0 to 15 loop
+        for i in 0 to 26 loop
             address <= std_logic_vector(to_unsigned(i, address'length));
             wait for 1 fs;
         end loop;
