@@ -35,7 +35,8 @@ begin
         port map(
             Ain => X,
             Bin => tmp1,
-            S => Xplus1
+            S => Xplus1,
+            C => open
         );
 
     tmp1 <= tmp0 & '1';
