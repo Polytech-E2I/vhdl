@@ -1,22 +1,22 @@
 [*]
-[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
-[*] Thu Dec  1 19:32:25 2022
+[*] GTKWave Analyzer v3.3.113 (w)1999-2022 BSI
+[*] Fri Dec 16 13:03:10 2022
 [*]
 [dumpfile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP4/exo01/pgcounter_tb.vcd"
-[dumpfile_mtime] "Thu Dec  1 19:32:19 2022"
-[dumpfile_size] 209890
+[dumpfile_mtime] "Fri Dec 16 13:02:41 2022"
+[dumpfile_size] 1050066
 [savefile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP4/exo01/pgcounter_tb.gtkw"
 [timestart] 0
 [size] 1440 829
 [pos] -1 -1
 *-4.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] pgcounter_tb.
-[sst_width] 208
+[sst_width] 209
 [signals_width] 102
 [sst_expanded] 1
 [sst_vpaned_height] 229
 @22
-pgcounter_tb.addr[3:0]
+pgcounter_tb.addr[7:0]
 @28
 pgcounter_tb.clk
 pgcounter_tb.jmp

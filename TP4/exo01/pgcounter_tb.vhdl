@@ -7,7 +7,7 @@ end;
 
 architecture tb of pgcounter_tb is
     constant filename:  string := "testfile.txt";
-    constant addrsize:  natural := 4;
+    constant addrsize:  natural := 8;
     constant datasize:  natural := 8;
 
     -- UUT component
