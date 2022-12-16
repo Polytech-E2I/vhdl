@@ -111,7 +111,7 @@ architecture impl02 of loadcount is
         );
     end component;
 
-    signal X:      std_logic_vector(N-1 downto 0) := (others => '0');
+    signal X:      std_logic_vector(N-1 downto 0) := (others => 'U');
     signal Xplus1: std_logic_vector(N-1 downto 0) := (others => 'U');
 
 begin
