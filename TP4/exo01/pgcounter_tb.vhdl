@@ -60,12 +60,15 @@ begin
         datain <= (others => 'U');
         wr_ena <= '0';
 
-        wait for 2 fs;
-        addr <= std_logic_vector(to_unsigned(13, addr'length));
-        wait for 1 fs;
-        jmp <= '1';
-        wait for 10 fs;
-        jmp <= '0';
+        for i in 10 to 26 loop
+            wait for 10 fs;
+            addr <= std_logic_vector(to_unsigned(i, addr'length));
+            wait for 1 fs;
+            jmp <= '1';
+            wait for 2 fs;
+            jmp <= '0';
+        end loop;
+
         wait for 100 fs;
     end process;
 end;
