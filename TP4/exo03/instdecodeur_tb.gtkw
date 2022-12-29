@@ -1,0 +1,26 @@
+[*]
+[*] GTKWave Analyzer v3.3.113 (w)1999-2022 BSI
+[*] Thu Dec 29 16:07:32 2022
+[*]
+[dumpfile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP4/exo03/instdecodeur_tb.vcd"
+[dumpfile_mtime] "Thu Dec 29 16:05:21 2022"
+[dumpfile_size] 989
+[savefile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP4/exo03/instdecodeur_tb.gtkw"
+[timestart] 0
+[size] 1280 644
+[pos] -1 -1
+*-0.815191 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 209
+[signals_width] 252
+[sst_expanded] 1
+[sst_vpaned_height] 172
+@29
+instdecodeur_tb.xin[15:0]
+instdecodeur_tb.w[15:0]
+instdecodeur_tb.ci
+instdecodeur_tb.sm
+instdecodeur_tb.opc[5:0]
+instdecodeur_tb.dst[2:0]
+instdecodeur_tb.cnd[2:0]
+[pattern_trace] 1
+[pattern_trace] 0
