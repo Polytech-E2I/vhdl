@@ -1,0 +1,25 @@
+[*]
+[*] GTKWave Analyzer v3.3.113 (w)1999-2022 BSI
+[*] Mon Jan  2 12:55:58 2023
+[*]
+[dumpfile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP4/exo04/condition_tb.vcd"
+[dumpfile_mtime] "Mon Jan  2 12:55:24 2023"
+[dumpfile_size] 179674
+[savefile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP4/exo04/condition_tb.gtkw"
+[timestart] 0
+[size] 1280 644
+[pos] -1 -1
+*-2.952156 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 209
+[signals_width] 94
+[sst_expanded] 1
+[sst_vpaned_height] 172
+@29
+condition_tb.xin[7:0]
+@28
+condition_tb.lt
+condition_tb.eq
+condition_tb.gt
+condition_tb.jmp
+[pattern_trace] 1
+[pattern_trace] 0
