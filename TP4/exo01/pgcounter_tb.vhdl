@@ -36,7 +36,6 @@ architecture tb of pgcounter_tb is
     signal datain :  std_logic_vector(datasize-1 downto 0);
     signal wr_ena :  std_logic := '0';
     signal dataout : std_logic_vector(datasize-1 downto 0);
-    ----------------------------------------------------------------------------
 
     constant clock_period: time := 1 fs;
 

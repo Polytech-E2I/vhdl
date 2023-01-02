@@ -70,8 +70,3 @@ begin
             '1' after 20 fs,
             '0' after 22 fs;
 end;
-
-
-
-
-
