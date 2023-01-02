@@ -9,7 +9,7 @@ architecture tb of instdecodeur_tb is
     -- UUT component
     component instdecodeur is
         port(
-            Xin:    in std_logic_vector(15 downto 0);
+            Xin:    in  std_logic_vector(15 downto 0);
             W:      out std_logic_vector(15 downto 0);
             ci:     out std_logic;
             sm:     out std_logic;
