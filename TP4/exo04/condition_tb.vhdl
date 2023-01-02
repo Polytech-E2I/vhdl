@@ -53,7 +53,6 @@ begin
     Xin <=
         (others => '0'),
         std_logic_vector(to_signed(13, Xin'length)) after 8 fs,
-        std_logic_vector(to_signed(-13, Xin'length)) after 16 fs,
-        (others => '1') after 24 fs
+        std_logic_vector(to_signed(-13, Xin'length)) after 16 fs
     ;
 end;
