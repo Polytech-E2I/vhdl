@@ -1,0 +1,25 @@
+<mxfile host="65bd71144e">
+    <diagram id="tMwy91Ut9m3yxmC65fXQ" name="Page-1">
+        <mxGraphModel dx="1015" dy="913" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="InstDecodeur" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="230" width="110" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="MemReg&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="140" width="220" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Mux2v1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="280" width="220" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="ALU" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="410" width="220" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Mux2v1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="550" width="220" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
