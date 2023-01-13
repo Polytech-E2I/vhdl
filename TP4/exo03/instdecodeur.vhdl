@@ -19,7 +19,11 @@ begin
     begin
         if (Xin(15) = '0') then
             W <= Xin;
-            dst(2) <= '1';
+            ci <= '0';
+            sm <= '0';
+            opc <= "000000";
+            dst <= "100";
+            cnd <= "000";
         else
             ci <= Xin(15);
             sm <= Xin(12);
