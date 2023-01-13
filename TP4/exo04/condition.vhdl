@@ -18,8 +18,8 @@ end;
 architecture impl of condition is
     constant ZEROS: std_logic_vector(N-1 downto 0) := (others => '0');
 
-    signal iszero:  std_logic := 'U';
-    signal isneg:   std_logic := 'U';
+    signal iszero:  std_logic;
+    signal isneg:   std_logic;
 begin
     iszero <= '1' when Xin = ZEROS  else '0';
     isneg  <= Xin(N-1);
