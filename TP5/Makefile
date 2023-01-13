@@ -30,11 +30,21 @@ memreg: ram registre
 	$(COMPIL1) memreg.vhdl
 instdecodeur: instdecodeur.vhdl
 	$(COMPIL1) instdecodeur.vhdl
+registre: registre.vhdl
+	$(COMPIL1) registre.vhdl
+increment: increment.vhdl addnbit
+	$(COMPIL1) increment.vhdl
+loadcount: loadcount.vhdl addnbit increment mux2v1 registre
+	$(COMPIL1) loadcount.vhdl
+pgcounter: pgcounter.vhdl loadcount ram
+	$(COMPIL1) pgcounter.vhdl
+condition: condition.vhdl
+	$(COMPIL1) condition.vhdl
 
-$(program): $(program).vhdl instdecodeur memreg mux2v1 alu
+$(program): $(program).vhdl instdecodeur memreg mux2v1 alu condition
 	$(COMPIL1) $(program).vhdl
 
-$(program)_tb: $(program) $(program)_tb.vhdl
+$(program)_tb: $(program) $(program)_tb.vhdl pgcounter ram
 	$(COMPIL1) $(program)_tb.vhdl
 	$(COMPIL2) $(program)_tb
 #	$(COMPIL2) $(program)_cfg1
