@@ -17,9 +17,10 @@ architecture tb of pgcounter_tb is
             datasize:   natural
         );
         port(
-            addr:   in std_logic_vector(addrsize-1 downto 0);
-            jmp:    in std_logic;
-            clk:    in std_logic;
+            addr:       in std_logic_vector(addrsize-1 downto 0);
+            jmp:        in std_logic;
+            clk:        in std_logic;
+            filename:   in string;
 
             inst:   out std_logic_vector(datasize-1 downto 0)
         );
@@ -49,6 +50,8 @@ begin
             addr => addr,
             jmp => jmp,
             clk => clk,
+            filename => filename,
+
             inst => inst
         );
 

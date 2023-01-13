@@ -7,9 +7,10 @@ entity pgcounter is
         datasize:   natural
     );
     port(
-        addr:   in std_logic_vector(addrsize-1 downto 0);
-        jmp:    in std_logic;
-        clk:    in std_logic;
+        addr:       in std_logic_vector(addrsize-1 downto 0);
+        jmp:        in std_logic;
+        clk:        in std_logic;
+        filename:   in string;
 
         inst:   out std_logic_vector(datasize-1 downto 0)
     );
@@ -48,7 +49,6 @@ architecture impl of pgcounter is
     constant CONSTANT1: std_logic := '1';
     constant CONSTANT0: std_logic := '0';
     constant DATAUNDEF: std_logic_vector(datasize-1 downto 0) := (others => 'U');
-    constant filename:  string := "testfile.txt";
     signal loadout:     std_logic_vector(addrsize-1 downto 0) := (others => 'U');
 
 begin
