@@ -1,7 +1,9 @@
 program = unitcont
 
-COMPIL1 = ghdl -a -fsynopsys
-COMPIL2 = ghdl -e -fsynopsys
+GHDLFLAGS=-fsynopsys
+#GHDLFLAGS=--ieee=synopsys -fexplicit
+COMPIL1 = ghdl -a $(GHDLFLAGS)
+COMPIL2 = ghdl -e $(GHDLFLAGS)
 SIM = gtkwave $(program)_tb.vcd $(program)_tb.gtkw
 
 #COMPIL1 = ncvhdl -V93 -WORK tp_lib -MESSAGES -NOCOPYRIGHT -LINE
