@@ -1,7 +1,7 @@
 program = unitcont
 
-COMPIL1 = ghdl -a
-COMPIL2 = ghdl -e
+COMPIL1 = ghdl -a -fsynopsys
+COMPIL2 = ghdl -e -fsynopsys
 SIM = gtkwave $(program)_tb.vcd $(program)_tb.gtkw
 
 #COMPIL1 = ncvhdl -V93 -WORK tp_lib -MESSAGES -NOCOPYRIGHT -LINE
@@ -25,7 +25,7 @@ alu: modifin addnbit
 registre: registre.vhdl
 	$(COMPIL1) registre.vhdl
 ram: ram.vhdl
-	$(COMPIL1) -fsynopsys ram.vhdl
+	$(COMPIL1) ram.vhdl
 memreg: ram registre
 	$(COMPIL1) memreg.vhdl
 instdecodeur: instdecodeur.vhdl
