@@ -55,7 +55,7 @@ $(program)_tb: $(program) $(program)_tb.vhdl pgcounter ram
 build: $(program)_tb
 
 sim: build
-	./$(program)_tb --vcd=$(program)_tb.vcd --stop-time=10ps
+	./$(program)_tb --vcd=$(program)_tb.vcd --stop-time=80fs
 #	./$(program)_cfg1 --vcd=$(program)_tb.vcd --stop-time=10ps
 	$(SIM)
 
