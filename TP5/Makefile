@@ -1,35 +1,43 @@
 program = unitcont
 
+COMPIL1 = ghdl -a
+COMPIL2 = ghdl -e
+SIM = gtkwave $(program)_tb.vcd $(program)_tb.gtkw
+
+#COMPIL1 = ncvhdl -V93 -WORK tp_lib -MESSAGES -NOCOPYRIGHT -LINE
+#COMPIL2 = ncelab -access rw -messages TP_LIB_.$(program):UUT -nowarn CUDEFB
+#SIM = ncsim -gui TP_LIB.$(program)_TB:UUT
+
 all: build
 
 add1bit: add1bit.vhdl
-	ghdl -a add1bit.vhdl
+	$(COMPIL1) add1bit.vhdl
 addnbit: addnbit.vhdl add1bit
-	ghdl -a addnbit.vhdl
+	$(COMPIL1) addnbit.vhdl
 inverseur: inverseur.vhdl
-	ghdl -a inverseur.vhdl
+	$(COMPIL1) inverseur.vhdl
 mux2v1: mux2v1.vhdl
-	ghdl -a mux2v1.vhdl
+	$(COMPIL1) mux2v1.vhdl
 modifin: modifin.vhdl inverseur mux2v1
-	ghdl -a modifin.vhdl
+	$(COMPIL1) modifin.vhdl
 alu: modifin addnbit
-	ghdl -a alu.vhdl
+	$(COMPIL1) alu.vhdl
 registre: registre.vhdl
-	ghdl -a registre.vhdl
+	$(COMPIL1) registre.vhdl
 ram: ram.vhdl
-	ghdl -a -fsynopsys ram.vhdl
+	$(COMPIL1) -fsynopsys ram.vhdl
 memreg: ram registre
-	ghdl -a memreg.vhdl
+	$(COMPIL1) memreg.vhdl
 instdecodeur: instdecodeur.vhdl
-	ghdl -a instdecodeur.vhdl
+	$(COMPIL1) instdecodeur.vhdl
 
 $(program): $(program).vhdl instdecodeur memreg mux2v1 alu
-	ghdl -a $(program).vhdl
+	$(COMPIL1) $(program).vhdl
 
 $(program)_tb: $(program) $(program)_tb.vhdl
-	ghdl -a $(program)_tb.vhdl
-	ghdl -e -fsynopsys $(program)_tb
-#	ghdl -e $(program)_cfg1
+	$(COMPIL1) $(program)_tb.vhdl
+	$(COMPIL2) $(program)_tb
+#	$(COMPIL2) $(program)_cfg1
 
 
 build: $(program)_tb
@@ -37,7 +45,7 @@ build: $(program)_tb
 sim: build
 	./$(program)_tb --vcd=$(program)_tb.vcd --stop-time=10ps
 #	./$(program)_cfg1 --vcd=$(program)_tb.vcd --stop-time=10ps
-	gtkwave $(program)_tb.vcd $(program)_tb.gtkw
+	$(SIM)
 
 clean:
 	rm -rf *.o *.cf *.vcd *_tb
