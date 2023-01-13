@@ -1,19 +1,19 @@
 [*]
 [*] GTKWave Analyzer v3.3.113 (w)1999-2022 BSI
-[*] Fri Jan 13 14:49:34 2023
+[*] Fri Jan 13 15:54:47 2023
 [*]
 [dumpfile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP5/unitcont_tb.vcd"
-[dumpfile_mtime] "Fri Jan 13 14:44:12 2023"
-[dumpfile_size] 1528537
+[dumpfile_mtime] "Fri Jan 13 15:54:27 2023"
+[dumpfile_size] 1544616
 [savefile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP5/unitcont_tb.gtkw"
 [timestart] 0
 [size] 869 644
-[pos] -141 -23
+[pos] -1 -1
 *-3.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] unitcont_tb.
 [treeopen] unitcont_tb.uut.
 [sst_width] 209
-[signals_width] 134
+[signals_width] 142
 [sst_expanded] 1
 [sst_vpaned_height] 172
 @28
@@ -24,11 +24,19 @@ unitcont_tb.addr[15:0]
 unitcont_tb.injmp
 @22
 unitcont_tb.inst[15:0]
+unitcont_tb.uut.mux2_out[15:0]
 @28
-unitcont_tb.outjmp
+unitcont_tb.uut.cmp_inst.dst[2:0]
+unitcont_tb.uut.cmp_memreg.a
+@22
+unitcont_tb.uut.cmp_memreg.aout[15:0]
+@28
+unitcont_tb.uut.cmp_memreg.d
 @22
 unitcont_tb.uut.cmp_memreg.dout[15:0]
-unitcont_tb.uut.cmp_memreg.aout[15:0]
+@29
+unitcont_tb.uut.cmp_memreg.sa
+@22
 unitcont_tb.uut.cmp_memreg.frommem[15:0]
 [pattern_trace] 1
 [pattern_trace] 0

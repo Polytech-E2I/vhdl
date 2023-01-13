@@ -126,8 +126,8 @@ begin
             Xin => MUX2_OUT,
             clk => clk,
 
-            d => ID_OUT_DST(2),
-            a => ID_OUT_DST(1),
+            a  => ID_OUT_DST(2),
+            d  => ID_OUT_DST(1),
             sa => ID_OUT_DST(0),
 
             Dout => MEMREG_OUT_D,
