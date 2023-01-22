@@ -33,11 +33,6 @@ architecture tb of pgcounter_tb is
     -- UUT output signals
     signal inst:    std_logic_vector(datasize-1 downto 0);
 
-    signal address : std_logic_vector(addrsize-1 downto 0);
-    signal datain :  std_logic_vector(datasize-1 downto 0);
-    signal wr_ena :  std_logic := '0';
-    signal dataout : std_logic_vector(datasize-1 downto 0);
-
     constant clock_period: time := 1 fs;
 
 begin
@@ -59,9 +54,6 @@ begin
 
     CASES: process
     begin
-        datain <= (others => 'U');
-        wr_ena <= '0';
-
         for i in 10 to 26 loop
             wait for 10 fs;
             addr <= std_logic_vector(to_unsigned(i, addr'length));
