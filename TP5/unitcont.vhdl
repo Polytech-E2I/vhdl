@@ -9,7 +9,8 @@ entity unitcont is
     port(
         inst:   in std_logic_vector(15 downto 0);
         clk:    in std_logic;
-        jmp:    out std_logic
+        jmp:    out std_logic;
+        instout:out std_logic_vector(15 downto 0)
     );
 end;
 
@@ -190,4 +191,6 @@ begin
 
             jmp => jmp
         );
+
+        instout <= MEMREG_OUT_A;
 end;
