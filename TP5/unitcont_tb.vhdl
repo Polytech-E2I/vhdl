@@ -17,6 +17,7 @@ architecture tb of unitcont_tb is
             addr:       in std_logic_vector(addrsize-1 downto 0);
             jmp:        in std_logic;
             clk:        in std_logic;
+            nrst:       in std_logic;
             filename:   in string;
 
             inst:   out std_logic_vector(datasize-1 downto 0)
@@ -26,7 +27,8 @@ architecture tb of unitcont_tb is
     -- Helper input signals
     signal addr: std_logic_vector(N-1 downto 0) := (others => '0');
     signal injmp:  std_logic := '0';
-    signal clk:  std_logic := '0';
+    signal clk:  std_logic := '1';
+    signal nrst: std_logic := '0';
     constant filename: string := "instructions1.txt";
     -- Helper output signals
     signal inst: std_logic_vector(N-1 downto 0);
@@ -52,6 +54,7 @@ architecture tb of unitcont_tb is
 
 begin
     clk <= not clk after clock_period/2;
+    nrst <= '0', '1' after clock_period * 4;
 
     PGC: pgcounter
         generic map(
@@ -62,6 +65,7 @@ begin
             addr => addr,
             jmp => injmp,
             clk => clk,
+            nrst => nrst,
             filename => filename,
             inst => inst
         );
@@ -72,18 +76,7 @@ begin
         port map(
             inst => inst,
             clk => clk,
-            --jmp => injmp,
-            instout => instout
+            jmp => injmp,
+            instout => addr
         );
-
-    CASES: process
-    begin
-        addr <= (others => '0');
-        wait for clock_period;
-        injmp <= '1';
-        wait for clock_period;
-        injmp <= '0';
-
-        wait for 100 fs;
-    end process;
 end;

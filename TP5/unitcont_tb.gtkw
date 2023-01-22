@@ -1,23 +1,25 @@
 [*]
 [*] GTKWave Analyzer v3.3.113 (w)1999-2022 BSI
-[*] Sun Jan 22 17:24:49 2023
+[*] Sun Jan 22 19:07:18 2023
 [*]
 [dumpfile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP5/unitcont_tb.vcd"
-[dumpfile_mtime] "Sun Jan 22 17:24:15 2023"
-[dumpfile_size] 58969
+[dumpfile_mtime] "Sun Jan 22 19:06:48 2023"
+[dumpfile_size] 211012
 [savefile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/TP5/unitcont_tb.gtkw"
 [timestart] 0
-[size] 1440 810
-[pos] 0 75
-*-3.600000 29 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[size] 1680 972
+[pos] 1440 0
+*-5.400000 30 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] unitcont_tb.
+[treeopen] unitcont_tb.pgc.
 [treeopen] unitcont_tb.uut.
 [sst_width] 209
-[signals_width] 169
+[signals_width] 174
 [sst_expanded] 1
-[sst_vpaned_height] 231
+[sst_vpaned_height] 287
 @28
 unitcont_tb.clk
+unitcont_tb.nrst
 @22
 unitcont_tb.addr[15:0]
 @28
