@@ -1,0 +1,53 @@
+#TOP = Test_Bench_PGCounter
+#SRCS = ../../tp_lib/*.vhdl
+#SCRS = $(shell finds ./SRC_xpe2i5a003/	-type f -name *.vdhl)
+SCRS = ~/SCR/*.vhdl
+
+					
+TB = ~/SCR/unitcont_tb.vhdl
+
+#WAVE=$(TOP)_wave.vcd
+
+all: analyze elaborate
+
+analyze:
+	#################################################
+	### etape d'analyse des entites/architectures ###
+	#################################################
+	#ghdl -a --work=TP_LIB --ieee=synopsys $(SRCS) # analyse l'entite/architecture
+	#ghdl -a --work=TP_LIB $(TOP).vhdl # analyse le banc de test
+	ncvhdl -V93 -WORK tp_lib -MESSAGES -NOCOPYRIGHT -LINE -SMARTORDER $(SCRS)
+	ncvhdl -V93 -WORK tp_lib -MESSAGES -NOCOPYRIGHT -LINE $(TB)
+
+elaborate: analyze
+	###########################
+	### Etape d'elaboration ###
+	###########################
+	#ghdl -e --work=TP_LIB --ieee=synopsys $(TOP) # elabore le modele
+	ncelab -access rw -messages TP_LIB.UNITCONT_TB
+
+run:
+	##################################################################
+	### attention a definir le temps de simulation qu'il vous faut ###
+	##################################################################
+	#ghdl -r --work=TP_LIB --ieee=synopsys $(TOP) --vcd=$(WAVE) --stop-time=200ns
+
+view: 	elaborate
+	#gtkwave $(WAVE)
+	#ncsim -gui tp_lib.unitcont_tb
+	ncsim -gui TP_LIB.UNITCONT_TB
+
+clean:
+	#@echo "WARNING: Cleaning..."
+	#rm -f $(WAVE) $(TOP)
+	#rm -f *.cf *.o
+
+#
+#alias pour la compilation de fichier vhdl
+#alias comp_vhdl='ncvhdl -V93 -WORK tp_lib -MESSAGES -NOCOPYRIGHT -LINE'
+
+#alias pour elaborer une compilation vhdl
+#alias elab_vhdl='ncelab -access rw -messages'
+
+#source
+#source ./projet_vhdl/.bashrc_cdsic616_ams410_isr15
