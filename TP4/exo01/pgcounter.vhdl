@@ -4,13 +4,14 @@ use ieee.std_logic_1164.all;
 entity pgcounter is
     generic(
         addrsize:   natural;
-        datasize:   natural
+        datasize:   natural;
+        filename:   string
     );
     port(
         addr:       in std_logic_vector(addrsize-1 downto 0);
         jmp:        in std_logic;
         clk:        in std_logic;
-        filename:   in string;
+        nrst:       in std_logic;
 
         inst:   out std_logic_vector(datasize-1 downto 0)
     );
@@ -46,8 +47,6 @@ architecture impl of pgcounter is
         );
     end component;
 
-    constant CONSTANT1: std_logic := '1';
-    constant CONSTANT0: std_logic := '0';
     constant DATAUNDEF: std_logic_vector(datasize-1 downto 0) := (others => 'U');
     signal loadout:     std_logic_vector(addrsize-1 downto 0) := (others => 'U');
 
@@ -60,7 +59,7 @@ begin
             E => addr,
             st => jmp,
             clk => clk,
-            nrst => CONSTANT1,
+            nrst => nrst,
             S => loadout
         );
     ROM: MA_RAM
@@ -72,7 +71,7 @@ begin
         port map(
             address => loadout,
             datain => DATAUNDEF,
-            wr_ena => CONSTANT0,
+            wr_ena => '0',
             dataout => inst
         );
 end;

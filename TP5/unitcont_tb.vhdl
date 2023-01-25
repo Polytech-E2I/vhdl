@@ -11,14 +11,14 @@ architecture tb of unitcont_tb is
     component pgcounter is
         generic(
             addrsize:   natural;
-            datasize:   natural
+            datasize:   natural;
+            filename:   string
         );
         port(
             addr:       in std_logic_vector(addrsize-1 downto 0);
             jmp:        in std_logic;
             clk:        in std_logic;
             nrst:       in std_logic;
-            filename:   in string;
 
             inst:   out std_logic_vector(datasize-1 downto 0)
         );
@@ -59,14 +59,14 @@ begin
     PGC: pgcounter
         generic map(
             addrsize => N,
-            datasize => N
+            datasize => N,
+            filename => filename
         )
         port map(
             addr => addr,
             jmp => injmp,
             clk => clk,
             nrst => nrst,
-            filename => filename,
             inst => inst
         );
     UUT: unitcont

@@ -14,13 +14,14 @@ architecture tb of pgcounter_tb is
     component pgcounter is
         generic(
             addrsize:   natural;
-            datasize:   natural
+            datasize:   natural;
+            filename:   string
         );
         port(
             addr:       in std_logic_vector(addrsize-1 downto 0);
             jmp:        in std_logic;
             clk:        in std_logic;
-            filename:   in string;
+            nrst:       in std_logic;
 
             inst:   out std_logic_vector(datasize-1 downto 0)
         );
@@ -30,6 +31,7 @@ architecture tb of pgcounter_tb is
     signal addr:    std_logic_vector(addrsize-1 downto 0) := (others => 'U');
     signal jmp:     std_logic := '0';
     signal clk:     std_logic := '0';
+    signal nrst:    std_logic := '0';
     -- UUT output signals
     signal inst:    std_logic_vector(datasize-1 downto 0);
 
@@ -39,13 +41,14 @@ begin
     UUT: pgcounter
         generic map(
             addrsize => addrsize,
-            datasize => datasize
+            datasize => datasize,
+            filename => filename
         )
         port map(
             addr => addr,
             jmp => jmp,
             clk => clk,
-            filename => filename,
+            nrst => nrst,
 
             inst => inst
         );

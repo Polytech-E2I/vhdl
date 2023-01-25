@@ -4,14 +4,14 @@ use ieee.std_logic_1164.all;
 entity pgcounter is
     generic(
         addrsize:   natural;
-        datasize:   natural
+        datasize:   natural;
+        filename:   string
     );
     port(
         addr:       in std_logic_vector(addrsize-1 downto 0);
         jmp:        in std_logic;
         clk:        in std_logic;
         nrst:       in std_logic;
-        filename:   in string;
 
         inst:   out std_logic_vector(datasize-1 downto 0)
     );
