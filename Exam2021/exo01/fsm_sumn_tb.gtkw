@@ -1,0 +1,33 @@
+[*]
+[*] GTKWave Analyzer v3.3.113 (w)1999-2022 BSI
+[*] Thu Jan 26 14:54:47 2023
+[*]
+[dumpfile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/Exam2021/exo01/fsm_sumn_tb.ghw"
+[dumpfile_mtime] "Thu Jan 26 14:53:59 2023"
+[dumpfile_size] 20538
+[savefile] "/home/tlenoboby/dev/github/Polytech-E2I/vhdl/Exam2021/exo01/fsm_sumn_tb.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -42 -22
+*-4.800000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.fsm_sumn_tb.
+[sst_width] 209
+[signals_width] 134
+[sst_expanded] 1
+[sst_vpaned_height] 157
+@28
+top.fsm_sumn_tb.uut.clk
+top.fsm_sumn_tb.uut.nrst
+top.fsm_sumn_tb.uut.start
+top.fsm_sumn_tb.uut.supo0
+@420
+top.fsm_sumn_tb.uut.current_state
+top.fsm_sumn_tb.uut.next_state
+@28
+top.fsm_sumn_tb.uut.out_choix
+top.fsm_sumn_tb.uut.out_load
+@29
+top.fsm_sumn_tb.uut.out_stop
+[pattern_trace] 1
+[pattern_trace] 0
