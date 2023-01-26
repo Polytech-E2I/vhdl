@@ -23,63 +23,66 @@ architecture impl of fsm_sumn is
     signal current_state: FSM_Machine := FSM_Idle;
     signal next_state:    FSM_Machine := FSM_Idle;
 
-    signal internal_start: std_logic := '0';
-
 begin
 
-    process (clk, nrst) is
+    process (clk, nrst, start, supo0) is
     begin
         if( nrst = '0' ) then
             current_state <= FSM_Idle;
-            internal_start <= '0';
-        else
-            internal_start <= start;
+            next_state    <= FSM_Idle;
+
+            out_choix <= '0';
+            out_load  <= '0';
+            out_stop  <= '0';
         end if;
+
+        case current_state is
+            when FSM_Idle =>
+                if(start = '0') then
+                    next_state <= FSM_Idle;
+                elsif(supo0 = '0') then
+                    next_state <= FSM_Output;
+                else
+                    next_state <= FSM_Add;
+                end if;
+
+            when FSM_Add =>
+                next_state <= FSM_Decrement;
+
+            when FSM_Decrement =>
+                if(supo0 = '1') then
+                    next_state <= FSM_Add;
+                else
+                    next_state <= FSM_Output;
+                end if;
+
+            when FSM_Output =>
+                if(supo0 = '1') then
+                    next_state <= FSM_Idle;
+                else
+                    next_state <= FSM_Output;
+                end if;
+        end case;
 
         -- if( clk'event and clk = '1' ) then
         if( rising_edge(clk) ) then
-            case current_state is
-                when FSM_Idle =>
-                    out_choix <= '0';
-                    out_load  <= '0';
-                    out_stop  <= '0';
-
-                    if(internal_start = '0') then
-                        next_state <= FSM_Idle;
-                    elsif(supo0 = '0') then
-                        next_state <= FSM_Output;
-                    else
-                        next_state <= FSM_Add;
-                    end if;
-                when FSM_Add =>
-                    out_choix <= '0';
-                    out_load  <= '1';
-                    out_stop  <= '0';
-
-                    next_state <= FSM_Decrement;
-
-                when FSM_Decrement =>
-                    out_choix <= '1';
-                    out_load  <= '1';
-                    out_stop  <= '0';
-
-                    if(supo0 = '1') then
-                        next_state <= FSM_Add;
-                    else
-                        next_state <= FSM_Output;
-                    end if;
-
-                when FSM_Output =>
-                    out_stop <= '1';
-
-                    if(supo0 = '1') then
-                        next_state <= FSM_Idle;
-                    else
-                        next_state <= FSM_Output;
-                    end if;
-            end case;
-
             current_state <= next_state;
+
+            if(next_state = FSM_Idle) then
+                out_choix <= '0';
+                out_load  <= '0';
+                out_stop  <= '0';
+            elsif(next_state = FSM_Add) then
+                out_choix <= '0';
+                out_load  <= '1';
+                out_stop  <= '0';
+            elsif(next_state = FSM_Decrement) then
+                out_choix <= '1';
+                out_load  <= '1';
+                out_stop  <= '0';
+            elsif(next_state = FSM_Output) then
+                out_stop  <= '1';
+            end if;
         end if;
     end process;
 end;

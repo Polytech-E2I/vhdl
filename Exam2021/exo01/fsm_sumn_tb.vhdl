@@ -37,7 +37,7 @@ architecture tb of fsm_sumn_tb is
 
     constant clock_period: time := 2 fs;
 begin
-    clk <= not clk after clock_period;
+    clk <= not clk after clock_period/2;
 
     UUT: fsm_sumn
         port map(
@@ -53,50 +53,48 @@ begin
 
     nrst <= '1' after 3*clock_period;
 
-    process(clk) is
+    process is
     begin
-        if(nrst = '1') then
+        wait for 3*clock_period;
 
-            -- Idle => Add
-            start <= '1';
-            supo0 <= '1';
-            -- wait for clock_period;
+        -- Idle => Add
+        start <= '1';
+        supo0 <= '1';
+        wait for clock_period;
 
-            -- Add => Decrement
-            -- wait for clock_period;
+        -- Add => Decrement
+        wait for clock_period;
 
-            -- Decrement => Add
-            supo0 <= '1';
-            -- wait for clock_period;
+        -- Decrement => Add
+        supo0 <= '1';
+        wait for clock_period;
 
-            -- Add => Decrement
-            -- wait for clock_period;
+        -- Add => Decrement
+        wait for clock_period;
 
-            -- Decrement => Output
-            supo0 <= '0';
-            -- wait for clock_period;
+        -- Decrement => Output
+        supo0 <= '0';
+        wait for clock_period;
 
-            -- Output => Idle
-            supo0 <= '1';
-            -- wait for clock_period;
+        -- Output => Idle
+        supo0 <= '1';
+        wait for clock_period;
 
-            -- Idle => Output
-            start <= '1';
-            supo0 <= '0';
-            -- wait for clock_period;
+        -- Idle => Output
+        start <= '1';
+        supo0 <= '0';
+        wait for clock_period;
 
-            -- Output => Output
-            supo0 <= '0';
-            -- wait for clock_period;
+        -- Output => Output
+        supo0 <= '0';
+        wait for clock_period;
 
-            -- Output => Idle
-            supo0 <= '1';
-            -- wait for clock_period;
+        -- Output => Idle
+        supo0 <= '1';
+        wait for clock_period;
 
-            -- Idle => Idle
-            start <= '0';
-            -- wait for clock_period;
-        end if;
-
+        -- Idle => Idle
+        start <= '0';
+        wait for clock_period;
     end process;
 end;
