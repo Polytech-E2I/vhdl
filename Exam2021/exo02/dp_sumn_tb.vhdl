@@ -40,7 +40,7 @@ begin
     nrst <= '1';
 
     in1 <= std_logic_vector(to_unsigned(10, in1'length));
-    in2 <= std_logic_vector(to_unsigned(1, in1'length));
+    in2 <= std_logic_vector(to_unsigned(1, in2'length));
 
     UUT: dp_sumn generic map(N => N)
         port map(

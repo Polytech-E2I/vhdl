@@ -76,6 +76,7 @@ architecture impl of dp_sumn is
 
     signal REG_NRST:        std_logic := '0';
     signal NOT_DONE:        std_logic := '0';
+    signal HIGH_Z:          std_logic_vector(N-1 downto 0) := (others => 'Z');
 
 begin
     REG_NRST <= nrst and not SOUSCARRY_OUT;
@@ -123,5 +124,13 @@ begin
             clk => clk,
 
             Q => ADDREG_OUT
+        );
+    MUXOUT: mux2v1 generic map(N => N)
+        port map(
+            D0 => HIGH_Z,
+            D1 => ADD_OUT,
+            S  => SOUSCARRY_OUT,
+
+            Y  => sumout
         );
 end;
